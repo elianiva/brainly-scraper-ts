@@ -1,0 +1,45 @@
+{
+  "name": "brainly-scraper-ts",
+  "version": "1.0.0",
+  "description": "Tiny package (~2KB) to get answer from brainly using the provided keyword/query written in Typescript",
+  "scripts": {
+    "build": "tsup index.ts --minify --dts --format esm,cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elianiva/brainly-scraper-ts.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json",
+    "./": "./"
+  },
+  "engines": {
+    "node": ">=12.x"
+  },
+  "author": "elianiva",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^14.10.0",
+    "axios": "^0.20.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  },
+  "keywords": [
+    "scrape",
+    "brainly",
+    "typescript",
+    "nodejs"
+  ]
+}
