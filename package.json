@@ -1,9 +1,9 @@
 {
   "name": "brainly-scraper-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tiny package (~2KB) to get answer from brainly using the provided keyword/query written in Typescript",
   "scripts": {
-    "build": "tsup index.ts --minify --dts --format esm,cjs"
+    "build": "tsup index.ts --minify-whitespace --dts --format esm,cjs"
   },
   "repository": {
     "type": "git",
