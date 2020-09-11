@@ -25,7 +25,7 @@ export default class Brainly {
    * Static function to get data from brainly site with the provided keyword and limit
    * @param {string} query Keyword that is used to get data from brainly
    * @param {limit} limit Data limit that is returned, default to 10
-   * @return {Promise<Result>} Result
+   * @return {Promise<FinalResult>} Object with property of status, counts, and data
    */
   static async getData(
     query: string,
@@ -100,5 +100,3 @@ export default class Brainly {
     }
   }
 }
-
-Brainly.getData("something")
