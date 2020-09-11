@@ -1,6 +1,8 @@
 # Brainly Scraper
 A promise based package to retrieve data from brainly using provided keyword
 
+**Note:** This package is intended for personal use, might be buggy.
+
 ## Installation
 ```sh
 npm i brainly-scraper-ts # npm
