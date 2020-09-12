@@ -9,17 +9,14 @@
     "type": "git",
     "url": "https://github.com/elianiva/brainly-scraper-ts.git"
   },
-  "files": [
-    "dist"
-  ],
-  "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "files": ["dist"],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     },
     "./package.json": "./package.json",
     "./": "./"
@@ -36,10 +33,5 @@
   "devDependencies": {
     "typescript": "^4.0.2"
   },
-  "keywords": [
-    "scrape",
-    "brainly",
-    "typescript",
-    "nodejs"
-  ]
+  "keywords": ["scrape", "brainly", "typescript", "nodejs"]
 }
