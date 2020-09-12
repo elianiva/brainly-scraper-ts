@@ -14,7 +14,7 @@ interface Result {
 interface FinalResult {
   status: string
   total: number
-  result: Result[]
+  result: Result[] | string
 }
 
 /**
@@ -76,11 +76,11 @@ export default class Brainly {
       const response = await axios.request(config)
       const { edges } = await response.data.data.questionSearch
       const results: Result[] = edges.map((edge: any) => ({
-        question: edge.node.content,
+        question: edge.node.content.replace(/(<br \/>)/gi, "\n"),
         attachments: edge.node.attachments,
         answers: edge.node.answers.nodes.map((node: any) => ({
           text: node.content
-            .replace(/(<br\ \/>)/, "\n")
+            .replace(/(<br \/>)/gi, "\n")
             .replace(/(<([^>]+)>)/gi, ""),
           attachments: node.attachments
         }))
@@ -90,12 +90,16 @@ export default class Brainly {
         resolve({
           status: "Success",
           total: results.length,
-          result: results
+          result: results.length ? results : "Didn't find any result"
         })
       )
     } catch (err) {
       return new Promise((_, reject) => {
-        reject(err)
+        reject({
+          status: "Error",
+          total: 0,
+          result: err.message
+        })
       })
     }
   }
