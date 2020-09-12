@@ -13,7 +13,7 @@ yarn add brainly-scraper-ts # yarn
 ## Usage
 ```javascript
 import Brainly from "brainly-scraper-ts" // esm
-const Brainly = require("brainly-scraper-ts") // cjs
+const Brainly = require("brainly-scraper-ts").default // cjs
 
 Brainly.getData("kenapa manusia bernafas?").then(res => console.log(res))
 ```
